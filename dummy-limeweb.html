@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>LimeRoot</title>
+        <style type="text/css">
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            
+            #menu{
+                background-color: #0b0b0b;
+                height: 40px;
+                /*display: block;*/
+                padding-left: 40px;
+                padding-right: 40px;
+                margin-bottom: 20px;
+            }
+            
+            #menu ul{
+                display: inline-block;
+                list-style-type:none;
+            }
+            
+            #menu ul li{
+                display: inline ;
+                float: left;
+            }
+            
+            #menu ul li a{
+                line-height: 40px;
+                display: block;
+                width: 60px;
+                margin-right: 10px;
+                text-decoration: none;
+                color: #bfbfbf;
+            }
+            
+            a.selected{
+                color: #6bbb00 !important;
+            }
+            
+            #page{
+                width: 80%;
+                margin: 0 auto;
+            }
+            
+            input[type="text"]{
+                border: 1px solid gray;
+                font-size: 13px;
+                padding: 5px;
+                outline: none;
+            }
+            
+            
+        </style>
+    </head>
+    
+        <body>
+            <div id="menu">
+                <ul>
+                    <li><a class="selected" href="#">home</a></li>
+                    <li><a href="#">plugins</a></li>
+                    <li><a href="#">messages</a></li>
+                </ul>
+            </div>
+            <div id="page">
+                <input type="text" placeholder="Testing text" />
+            </div>
+        </body>
+</html>
