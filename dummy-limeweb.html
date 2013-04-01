@@ -10,12 +10,18 @@
                 font-family: Helvetica, Arial, sans-serif;
             }
             
+            #back_ribbon{
+                background-color: #0b0b0b;
+                height: 40px;
+                width: 100%;
+                position: absolute;
+                z-index: -1;
+            }
+            
             #menu{
                 background-color: #0b0b0b;
                 height: 40px;
                 /*display: block;*/
-                padding-left: 40px;
-                padding-right: 40px;
                 margin-bottom: 20px;
             }
             
@@ -32,42 +38,73 @@
             #menu ul li a{
                 line-height: 40px;
                 display: block;
-                width: 60px;
-                margin-right: 10px;
+                /*width: 60px;*/
+                margin-right: 20px;
                 text-decoration: none;
                 color: #bfbfbf;
+                font-weight: lighter;
+                letter-spacing: -1px;
+                
+            }
+            
+            #menu ul li a:hover{
+                color: #6bbb00;
             }
             
             a.selected{
                 color: #6bbb00 !important;
             }
             
-            #page{
+            #content{
                 width: 80%;
                 margin: 0 auto;
             }
             
             input[type="text"]{
                 border: 1px solid gray;
-                font-size: 13px;
+                /*font-size: 13px;*/
                 padding: 5px;
                 outline: none;
             }
             
+            input[type="button"], select{
+                padding: 5px;
+                
+            }
+            
+            textarea{
+                border: 1px solid gray;
+                overflow: auto;
+                width: 200px;
+                height: 80px;
+            }
             
         </style>
     </head>
     
         <body>
-            <div id="menu">
-                <ul>
-                    <li><a class="selected" href="#">home</a></li>
-                    <li><a href="#">plugins</a></li>
-                    <li><a href="#">messages</a></li>
-                </ul>
-            </div>
-            <div id="page">
-                <input type="text" placeholder="Testing text" />
+            <div id="back_ribbon"></div>
+            <div id="content">
+                <div id="menu">
+                    <ul>
+                        <li><a class="selected" href="#">home</a></li>
+                        <li><a href="#">plugins</a></li>
+                        <li><a href="#">messages</a></li>
+                    </ul>
+                </div>
+                <div id="page">
+                    <input type="text" placeholder="Testing text" />
+                    <input type="button" value="button" />
+                    <br/>
+                    <br/>
+                    <select>
+                        <option>first</option>
+                        <option>second</option>
+                    </select>
+                    <br/>
+                    <br/>
+                    <textarea>Textarea</textarea>
+                </div>
             </div>
         </body>
 </html>
