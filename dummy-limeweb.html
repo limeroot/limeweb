@@ -61,16 +61,22 @@
                 margin: 0 auto;
             }
             
+
             input[type="text"]{
                 border: 1px solid gray;
                 /*font-size: 13px;*/
                 padding: 5px;
                 outline: none;
             }
+
+            input:focus, textarea:focus, select:focus {
+                box-shadow: 0 0 5px #6bbb00;
+                -webkit-box-shadow: 0 0 5px #6bbb00;
+                -moz-box-shadow: 0 0 5px #6bbb00;
+            }
             
             input[type="button"], select{
                 padding: 5px;
-                
             }
             
             textarea{
