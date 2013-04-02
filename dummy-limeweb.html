@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>LimeRoot</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style type="text/css">
             *{
                 padding: 0;
@@ -44,7 +45,7 @@
                 color: #bfbfbf;
                 font-weight: lighter;
                 letter-spacing: -1px;
-                
+                padding: 0px 5px;
             }
             
             #menu ul li a:hover{
@@ -78,7 +79,81 @@
                 width: 200px;
                 height: 80px;
             }
+
+            span#floatnum{
+                background:#ff7942;
+                position:relative;
+                padding: 0px 2px;
+                top: -36px;
+                left: -14px;
+                font-size:10px;
+                color:#000000;
+                float: right;
+                /*border-radius: 3px;*/
+            }
+
+            .arrow_box {
+                background: #2b323d;
+                position: relative;
+                display:block;
+                border-radius:5px;
+                top:45px;
+            }
+
+            .arrow_box:after, .arrow_box:before {
+                bottom: 100%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none; 
+            }
+
+            .arrow_box:after {
+                border-bottom-color: #2b323d;
+                border-width: 16px;
+                left: 20%;
+                margin-left: -30px;
+            }
+
+            .arrow_box:before {
+                border-width: 16px;
+                margin-left: -36px;
+            }
+
+            #messages{
+                list-style-type: none;
+                position:absolute;
+                height:auto;
+                width:260px;
+                padding:3px;
+                font-size:10px;
+                text-align: right;
+                display: block;
+            }
+
+            #messages ul li{
+                border-radius:3px;
+                text-align:left;
+                color:#75AD4F;
+                font-size:13px;
+                line-height:18px;
+                width:254px;
+                padding:3px;
+            }
             
+            #messages ul li:hover{
+                background-color:#ffffff;
+                color:#000000;
+            }
+
+            span.info{
+                color: #3E7D91;
+                display: block;
+                font-size: 11px;
+                font-weight: lighter;
+            }
         </style>
     </head>
     
@@ -89,7 +164,18 @@
                     <ul>
                         <li><a class="selected" href="#">home</a></li>
                         <li><a href="#">plugins</a></li>
-                        <li><a href="#">messages</a></li>
+                        <li><a href="#">other</a></li>
+                        <li><a href="#">fake_item</a></li>
+                        <li><a href="#">messages</a>
+                            <span id="floatnum">2</span>
+                            <div id="messages" class="arrow_box" style="display: block;">
+                                <ul>
+                                    <li>ISP1: Connection lost<span class="info">Apr 01, 2013@21:28 by LimeHelper</span></li>
+                                    <li>HDD: Temperature over 40&deg;C<span class="info">Apr 01, 2013@22:14 by LimeCare</span></li>
+                                    <li><div class="title"><center>Show All</center></div></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div id="page">
