@@ -4,6 +4,7 @@
     <head>
         <title>LimeRoot</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <style type="text/css">
             *{
                 padding: 0;
@@ -86,21 +87,21 @@
                 height: 80px;
             }
 
-            span#floatnum{
+            #floatnum{
                 background:#ff7942;
                 position:relative;
-                padding: 0px 2px;
+                padding: 0px 3px;
                 top: -36px;
-                left: -14px;
+                left: -12px;
                 font-size:10px;
                 color:#000000;
                 float: right;
-                /*border-radius: 3px;*/
+                border-radius: 3px;
             }
 
             .arrow_box {
                 background: #2b323d;
-                position: relative;
+                position: absolute;
                 display:block;
                 border-radius:5px;
                 top:45px;
@@ -119,8 +120,7 @@
             .arrow_box:after {
                 border-bottom-color: #2b323d;
                 border-width: 16px;
-                left: 20%;
-                margin-left: -30px;
+                margin-left: 17px;
             }
 
             .arrow_box:before {
@@ -135,8 +135,6 @@
                 width:260px;
                 padding:3px;
                 font-size:10px;
-                text-align: right;
-                display: block;
             }
 
             #messages ul li{
@@ -157,9 +155,17 @@
             span.info{
                 color: #3E7D91;
                 display: block;
-                font-size: 11px;
+                font-size: 12px;
                 font-weight: lighter;
             }
+            
+            span.data{
+                color: #9EA4A8;
+                display: block;
+                font-size: 12px;
+                font-weight: lighter;
+            }
+            
         </style>
     </head>
     
@@ -172,11 +178,28 @@
                         <li><a href="#">plugins</a></li>
                         <li><a href="#">other</a></li>
                         <li><a href="#">fake_item</a></li>
-                        <li><a href="#">messages</a>
-                            <span id="floatnum">2</span>
-                            <div id="messages" class="arrow_box" style="display: block;">
+                        <li><a href="#" id="showmsg">messages</a>
+                            <span id="floatnum">3</span>
+                            <div class="arrow_box" id="messages">
                                 <ul>
-                                    <li>ISP1: Connection lost<span class="info">Apr 01, 2013@21:28 by LimeHelper</span></li>
+                                    <li>Ticket (New): Navigation
+                                    	<span class="data">Hello!, I'm trying to connect to a_blacklisturl, but the page always show server too busy...</span>
+                                    	<span class="info">Apr 01, 2013@21:28 by user ip 192.168.0.32</span></li>
+                                    <li><p style="color: #DFBB53;">Ticket (Request): New Client</p>
+                                    	<span class="data">Hi colleague!, I found a new client that want get involved with our Internet service, their...</span>
+                                    	<span class="info">Apr 01, 2013@22:14 by SubAdmin:Charles</span></li>
+                                    <li>Ticket (Closed): North AP issue
+                                    	<span class="data">Hello, I replace the faulty AP (serial #2234231) with AP #0134299 in our north node, I sent ... </span>
+                                    	<span class="info">Apr 01, 2013@22:14 by Empl.:Dave</span></li>
+                                    <li><div class="title"><center>Show All</center></div></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#" id="showalarm">alerts</a>
+                            <span id="floatnum">2</span>
+                            <div class="arrow_box" id="messages">
+                                <ul>
+                                    <li>ISP1: Connection lost<span class="info">Apr 01, 2013@21:28 by LiMon</span></li>
                                     <li>HDD: Temperature over 40&deg;C<span class="info">Apr 01, 2013@22:14 by LimeCare</span></li>
                                     <li><div class="title"><center>Show All</center></div></li>
                                 </ul>
@@ -198,5 +221,12 @@
                     <textarea>Textarea</textarea>
                 </div>
             </div>
+			<script>
+			$(function(){
+				$(".arrow_box").hide();
+				$("#showmsg").click(function(){ $(".arrow_box").eq(0).fadeToggle("slow"); $(".arrow_box").eq(1).hide(); });
+				$("#showalarm").click(function(){ $(".arrow_box").eq(1).fadeToggle("slow"); $(".arrow_box").eq(0).hide(); });
+			});
+			</script>
         </body>
 </html>
