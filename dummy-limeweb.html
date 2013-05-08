@@ -69,6 +69,10 @@
                 /*font-size: 13px;*/
                 padding: 5px;
                 outline: none;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -khtml-border-radius: 5px;
+                border-radius: 5px;
             }
 
             input:focus, textarea:focus, select:focus {
@@ -77,15 +81,30 @@
                 -moz-box-shadow: 0 0 5px #6bbb00;
             }
             
-            input[type="button"], select{
-                padding: 5px;
+            input[type="button"]{
+                padding: 4px 10px;
+                background:#A8DB85;
+                background:-moz-linear-gradient(top,#A8DB85 0%,#8FB475 100%);
+                background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#A8DB85),color-stop(100%,#8FB475));
+                background:-webkit-linear-gradient(top,#A8DB85 0%,#8FB475 100%);
+                background:linear-gradient(top,#A8DB85 0%,#8FB475 100%);
+                border-radius:5px;
+                -moz-border-radius:5px;
+                -webkit-border-radius:5px;
+                border:1px solid #459A00;
             }
             
             textarea{
+                font-family: Helvetica, Arial, sans-serif;
                 border: 1px solid gray;
                 overflow: auto;
                 width: 200px;
                 height: 80px;
+                padding: 5px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -khtml-border-radius: 5px;
+                border-radius: 5px;
             }
 
             #floatnum{
@@ -187,8 +206,8 @@
             var chart;
             $('#graph_container').highcharts({
                 colors: [
-                   '#4572A7', 
-                   '#AA4643', 
+                   '#3B5728', 
+                   '#75AD4F', 
                    '#89A54E', 
                    '#80699B', 
                    '#3D96AE', 
