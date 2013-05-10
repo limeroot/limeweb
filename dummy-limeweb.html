@@ -4,6 +4,13 @@
     <head>
         <title>LimeRoot</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- The follow lines is only to prevent caching of the preview of this dummy in some sites, pls remove after the first beta release if it include limeweb. DELETE FROM HERE-->
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <!-- TO HERE -->
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
         <style type="text/css">
@@ -17,6 +24,7 @@
                 background-color: #0b0b0b;
                 height: 40px;
                 width: 100%;
+                /*min-width: 980px;*/
                 position: absolute;
                 z-index: -1;
             }
@@ -26,6 +34,7 @@
                 height: 40px;
                 /*display: block;*/
                 margin-bottom: 20px;
+                /*min-width: 980px;*/
             }
             
             #menu ul{
@@ -59,10 +68,23 @@
             }
             
             #content{
-                width: 80%;
+                width: 85%;
                 margin: 0 auto;
             }
             
+            #page {
+                float:right;
+                width: 82%;
+                padding:10px;
+            }
+
+            #sidebar {
+                float:left;
+                /*width:480px;*/
+                width: 14%;
+                padding:10px;
+            }
+
 
             input[type="text"]{
                 border: 1px solid gray;
@@ -193,6 +215,99 @@
                 height: 298px;
                 margin: 0 auto;
             }
+
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .menu {
+                width: 100%;
+                height: auto;
+                margin: 5px auto 5px auto;
+                padding:1px 3px 3px 3px;
+                font-size: 11px;
+                text-align: left;
+                background: rgba(255, 255, 255, 0.5);
+            }
+
+            .menu li a {
+                padding: 2px 10px 0px 10px;
+                margin: 4px 0px 0px 0px;
+                text-decoration:none;
+                height: 19px;
+                display: block;
+                position: relative;
+                color: #ABABAB;
+            }
+
+            .menu li a:hover{
+                background: #fff;
+                color:#000000;
+            }
+            
+            .menu li a.active {
+                color: #6bbb00;
+                background: black;
+            }
+
+            .menu ul li a {
+                margin:5px 5px 0px 15px;
+                width:82%;
+                height:10px;
+                padding:3px 0 7px 3px;
+                color: #000000;
+            }
+
+            .menu ul li a:hover {
+                text-align:left;
+                text-indent:20px;
+                color: #FFFFFF;
+                background:#2b323d;
+                border-left:10px solid #FFA500;
+            }
+
+            .hmenu {
+                position: static;
+                margin: 0px 1px 0 0;
+                font-size: 11px;
+            }
+
+            .hmenu li a {
+                float: left;
+                width: auto;
+                text-align:center;
+                padding:2px 10px;
+                color:rgb(65,0,93);
+                text-decoration:none;
+            }
+
+            .hmenu li a:hover{
+                color:#fff;
+                background:rgb(65,0,93);
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+            }
+
+            .hmenu li a:active{
+                color:#fff;
+                text-decoration:none;
+                background:#2b323d;
+                
+            }
+
+            .hmenu li a.active{
+                color:#fff;
+                background:#2b323d;
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+            }
+
+            .tabs > tbody > tr:first-child > td {
+                border-bottom: 3px solid #2b323d;
+            }
+
         </style>
     </head>
     <body>
@@ -217,10 +332,9 @@
                    '#B5CA92'
                 ],
                 chart: {
-                    width: 1000,
-                    height: 298,
-                    type: 'areaspline',
-                    marginRight: 10,
+                    width: 900,
+                    height: 160,
+                    type: 'spline',
                     events: {
                         load: function() {
                             var series = this.series[0];
@@ -235,17 +349,26 @@
                         }
                     }
                 },
+                credits: {
+                    text: 'LimeRoot.org',
+                    href: 'http://www.limeroot.org'
+                },
                 title: {
-                    text: 'Live Bandwidth data'
+                    text: 'Live Bandwidth data',
+                    style: {
+                        color: '#75AD4F',
+                        fontSize: '13px',
+                    }
                 },
                 xAxis: {
                     type: 'datetime',
-                    tickPixelInterval: 150
+                    tickPixelInterval: 150,
                 },
                 yAxis: {
                     title: {
                         text: 'Speed (Mb/s)'
                     },
+                    gridLineColor: '#ffffff',
                     plotLines: [{
                         value: 0,
                         width: 1,
@@ -260,7 +383,7 @@
                     }
                 },
                 legend: {
-                    enabled: false
+                    enabled: true
                 },
                 exporting: {
                     enabled: false
@@ -304,9 +427,9 @@
             <div id="menu">
                 <ul>
                     <li><a class="selected" href="#">home</a></li>
+                    <li><a href="#">setup</a></li>
                     <li><a href="#">plugins</a></li>
-                    <li><a href="#">other</a></li>
-                    <li><a href="#">fake_item</a></li>
+                    <li><a href="#">other_item</a></li>
                     <li><a href="#" id="showmsg">messages</a>
                         <span id="floatnum">3</span>
                         <div class="arrow_box" id="messages">
@@ -337,6 +460,17 @@
                 </ul>
             </div>
             <div id="page">
+                <table class="tabs" border="0" cellspacing="0" cellpadding="0" width="100%">
+                    <tr><td><ul class="hmenu">
+                    <li><a href="#"> Add New</a></li>
+                    <li><a href="#"> Manage</a></li>
+                    <li><a href="#"> Configure</a></li>
+                    <li><a href="#"> Item 4</a></li>
+                    <li><a href="dummy-limeweb.html"> Actual</a></li>
+                    <li><a href="#"> Item 5</a></li>
+                    </ul></td></tr><tr><td><br/>
+                </td></tr></table>
+
                 <p id="graph_container"></p>
                 <input type="text" placeholder="Testing text" />
                 <input type="button" value="button" />
@@ -349,13 +483,44 @@
                 <br/>
                 <br/>
                 <textarea>Textarea</textarea>
+
+            </div>
+            <div id="sidebar">
+                <ul class="menu">
+                    <li><a href="#">Bind Plugin</a><ul>
+                        <li><a href="#"> Configuration</a></li>
+                        <li><a href="#"> Fake URLs</a></li>
+                        <li><a href="#"> DNS BlackHole</a></li>
+                    </ul></li>
+                    <li><a href="#">QoS Plugin</a><ul>
+                        <li><a href="#"> Policy</a></li>
+                        <li><a href="#"> Priority</a></li>
+                        <li><a href="#"> Burst Setup</a></li>
+                    </ul></li>
+                    <li><a href="#"> Guren</a></li>
+                    <li><a href="#"> phpMyAdmin</a></li>
+                </ul>
             </div>
         </div>
 		<script>
 		$(function(){
+            var menu_ul = $('.menu > li > ul'),
+            menu_a  = $('.menu > li > a');
+            menu_ul.hide();
+            menu_a.click(function() {
+                if(!$(this).hasClass('active')) {
+                    menu_a.removeClass('active');
+                    menu_ul.filter(':visible').slideUp('normal');
+                    $(this).addClass('active').next().stop(true,true).slideDown('fast');
+                } else {
+                    $(this).removeClass('active');
+                    $(this).next().stop(true,true).slideUp('fast');
+                }
+            });
 			$(".arrow_box").hide();
 			$("#showmsg").click(function(){ $(".arrow_box").eq(0).fadeToggle("slow"); $(".arrow_box").eq(1).hide(); });
 			$("#showalarm").click(function(){ $(".arrow_box").eq(1).fadeToggle("slow"); $(".arrow_box").eq(0).hide(); });
+            $('.hmenu > li > a[href$="dummy-limeweb.html"]').addClass('active');
     	});
 		</script>
     </body>
