@@ -334,7 +334,7 @@
                 chart: {
                     width: 900,
                     height: 160,
-                    type: 'spline',
+                    type: 'areaspline',
                     events: {
                         load: function() {
                             var series = this.series[0];
@@ -516,10 +516,13 @@
                     $(this).removeClass('active');
                     $(this).next().stop(true,true).slideUp('fast');
                 }
+                e.preventDefault();
             });
 			$(".arrow_box").hide();
-			$("#showmsg").click(function(){ $(".arrow_box").eq(0).fadeToggle("slow"); $(".arrow_box").eq(1).hide(); });
-			$("#showalarm").click(function(){ $(".arrow_box").eq(1).fadeToggle("slow"); $(".arrow_box").eq(0).hide(); });
+			$("#showmsg").click(function(){$(".arrow_box").eq(0).fadeToggle("slow");$(".arrow_box").eq(1).hide();});
+			$("#showalarm").click(function(){$(".arrow_box").eq(1).fadeToggle("slow");$(".arrow_box").eq(0).hide();});
+            $(document).mouseup(function(e){ if ($(".arrow_box").is(":visible")){$(".arrow_box").eq(1).hide();$(".arrow_box").eq(0).hide();}
+            });
             $('.hmenu > li > a[href$="dummy-limeweb.html"]').addClass('active');
     	});
 		</script>
