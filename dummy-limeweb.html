@@ -21,6 +21,15 @@
             }
             
             #back_ribbon{
+                background-color: #3C3C3C;
+                height: 55px;
+                width: 100%;
+                /*min-width: 980px;*/
+                position: absolute;
+                z-index: -1;
+            }
+
+            #back_ribbon2{
                 background-color: #0b0b0b;
                 height: 40px;
                 width: 100%;
@@ -28,12 +37,18 @@
                 position: absolute;
                 z-index: -1;
             }
-            
+
+            #rowinfo{
+                color: #bfbfbf;
+                font-weight: lighter;
+                font-size: 10px;
+            }
+         
             #menu{
                 background-color: #0b0b0b;
                 height: 40px;
                 /*display: block;*/
-                margin-bottom: 20px;
+                /*margin-bottom: 20px;*/
                 /*min-width: 980px;*/
             }
             
@@ -68,7 +83,7 @@
             }
             
             #content{
-                width: 85%;
+                width: 82%;
                 margin: 0 auto;
             }
             
@@ -81,7 +96,7 @@
             #sidebar {
                 float:left;
                 /*width:480px;*/
-                width: 14%;
+                width: 10%;
                 padding:10px;
             }
 
@@ -321,8 +336,8 @@
             var chart;
             $('#graph_container').highcharts({
                 colors: [
-                   '#3B5728', 
-                   '#75AD4F', 
+                   '#4572A7', 
+                   '#AA4643', 
                    '#89A54E', 
                    '#80699B', 
                    '#3D96AE', 
@@ -423,6 +438,7 @@
         });
     </script>
         <div id="back_ribbon"></div>
+        <div id="back_ribbon2"></div>
         <div id="content">
             <div id="menu">
                 <ul>
@@ -458,6 +474,20 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+            <div id="rowinfo">
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="16px"></td>
+                        <td width="115px">Welcome, LimeAdmin.</td>
+                        <td width="30px"></td>
+                        <td width="100px">Online: 24 users</td>
+                        <td width="30px"></td>
+                        <td>Ram: 131 Mb Free</td>
+                        <td width="35px"></td>
+                        <td>Average: 300 Kb/s</td>
+                    </tr>
+                </table>
             </div>
             <div id="page">
                 <table class="tabs" border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -519,8 +549,8 @@
                 e.preventDefault();
             });
 			$(".arrow_box").hide();
-			$("#showmsg").click(function(){$(".arrow_box").eq(0).fadeToggle("slow");$(".arrow_box").eq(1).hide();});
-			$("#showalarm").click(function(){$(".arrow_box").eq(1).fadeToggle("slow");$(".arrow_box").eq(0).hide();});
+			$("#showmsg").click(function(){$(".arrow_box").eq(0).fadeIn("slow");$(".arrow_box").eq(1).hide();});
+			$("#showalarm").click(function(){$(".arrow_box").eq(1).fadeIn("slow");$(".arrow_box").eq(0).hide();});
             $(document).mouseup(function(e){ if ($(".arrow_box").is(":visible")){$(".arrow_box").eq(1).hide();$(".arrow_box").eq(0).hide();}
             });
             $('.hmenu > li > a[href$="dummy-limeweb.html"]').addClass('active');
