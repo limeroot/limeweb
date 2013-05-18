@@ -1,0 +1,227 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+p{
+	font-weight: lighter;
+    font-size: 13px;
+}
+
+#back_ribbon{
+    background-color: #3C3C3C;
+    height: 55px;
+    width: 100%;
+    /*min-width: 980px;*/
+    position: absolute;
+    z-index: -1;
+}
+
+#back_ribbon2{
+    background-color: #0b0b0b;
+    height: 40px;
+    width: 100%;
+    /*min-width: 980px;*/
+    position: absolute;
+    z-index: -1;
+}
+
+#rowinfo{
+    color: #bfbfbf;
+    font-weight: lighter;
+    font-size: 10px;
+}
+
+#menu{
+    background-color: #0b0b0b;
+    height: 40px;
+    /*display: block;*/
+    /*margin-bottom: 20px;*/
+    /*min-width: 980px;*/
+}
+
+#menu ul{
+    display: inline-block;
+    list-style-type:none;
+}
+
+#menu ul li{
+    display: inline ;
+    float: left;
+}
+
+#menu ul li a{
+    line-height: 40px;
+    display: block;
+    /*width: 60px;*/
+    margin-right: 20px;
+    text-decoration: none;
+    color: #bfbfbf;
+    font-weight: lighter;
+    letter-spacing: -1px;
+    padding: 0px 5px;
+}
+
+#menu ul li a:hover{
+    color: #6bbb00;
+}
+
+a.selected{
+    color: #6bbb00 !important;
+}
+
+#content{
+    width: 82%;
+    margin: 0 auto;
+}
+
+#page {
+    float:right;
+    width: 82%;
+    padding:10px;
+}
+
+#sidebar {
+    float:left;
+    /*width:480px;*/
+    width: 10%;
+    padding:10px;
+}
+
+
+input[type="text"]{
+    border: 1px solid gray;
+    /*font-size: 13px;*/
+    padding: 5px;
+    outline: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input:focus, textarea:focus, select:focus {
+    box-shadow: 0 0 5px #6bbb00;
+    -webkit-box-shadow: 0 0 5px #6bbb00;
+    -moz-box-shadow: 0 0 5px #6bbb00;
+}
+
+input[type="button"]{
+    padding: 4px 10px;
+    background:#A8DB85;
+    background:-moz-linear-gradient(top,#A8DB85 0%,#8FB475 100%);
+    background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#A8DB85),color-stop(100%,#8FB475));
+    background:-webkit-linear-gradient(top,#A8DB85 0%,#8FB475 100%);
+    background:linear-gradient(top,#A8DB85 0%,#8FB475 100%);
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #459A00;
+}
+
+textarea{
+    font-family: Helvetica, Arial, sans-serif;
+    border: 1px solid gray;
+    overflow: auto;
+    width: 200px;
+    height: 80px;
+    padding: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#floatnum{
+    background:#ff7942;
+    position:relative;
+    padding: 0px 3px;
+    top: -36px;
+    left: -12px;
+    font-size:10px;
+    color:#000000;
+    float: right;
+    border-radius: 3px;
+}
+
+.arrow_box {
+    background: #2b323d;
+    position: absolute;
+    display:block;
+    border-radius:5px;
+    top:45px;
+    z-index: 100;
+}
+
+.arrow_box:after, .arrow_box:before {
+    bottom: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none; 
+}
+
+.arrow_box:after {
+    border-bottom-color: #2b323d;
+    border-width: 16px;
+    left: 0px;
+    margin-left: 17px;
+}
+
+.arrow_box:before {
+    border-width: 16px;
+    margin-left: -16px;
+}
+
+#messages{
+    list-style-type: none;
+    position:absolute;
+    height:auto;
+    width:260px;
+    padding:3px;
+    font-size:10px;
+}
+
+#messages ul li{
+    border-radius:3px;
+    text-align:left;
+    color:#75AD4F;
+    font-size:13px;
+    line-height:18px;
+    width:254px;
+    padding:3px;
+}
+
+#messages ul li:hover{
+    background-color:#ffffff;
+    color:#000000;
+}
+
+span.info{
+    color: #3E7D91;
+    display: block;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+span.data{
+    color: #9EA4A8;
+    display: block;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.graph_container{
+    width: 674px;
+    height: 298px;
+    margin: 0 auto;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
