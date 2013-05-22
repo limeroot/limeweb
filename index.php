@@ -19,8 +19,7 @@
         <div id="content">
             <?php include ("menu.php"); ?>
             <div id="page">
-                <br/>
-                <h3>Test Index Page.</h3><br/>
+                <h3>Overview</h3><br/>
                 <p>Index Content Here...</p>
             </div>
         </div>
