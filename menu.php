@@ -4,7 +4,7 @@
 	function topmenu(){
 		$items = array(
 			'home'=>'/index.php',
-	        'setup'=>'/setup.php',
+	        // 'setup'=>'/setup.php',
 	        'plugins'=>'/plugins.php');
 		foreach ($items as $item => $url) {
 			$menu = $menu . "<li><a href='$url'>" . $item . "</a></li>";
@@ -13,7 +13,7 @@
 	}
 ?>
 <div id="menu">
-<ul>
+<ul class="mainmenu">
     <?php echo topmenu(); ?>
     <li><a href="#" id="showmsg">messages</a>
         <span id="floatnum"><div id="qmsg"></div></span>
@@ -47,7 +47,17 @@
     <ul class="menu">
         <?php
             foreach (glob($_SERVER['DOCUMENT_ROOT'] . "/plugins/*", GLOB_ONLYDIR) as $pluginName) {
-                echo "<li><a href='/plugins/".basename($pluginName)."'>".basename($pluginName)."</a></li>";
+                $dir = glob($pluginName . "/*", GLOB_ONLYDIR);
+                $i = count($dir);
+                if ($i == 0){
+                    echo "<li><a href='/plugins/".basename($pluginName)."'>".basename($pluginName)."</a></li>";
+                }else{
+                    echo "<li><a href='#'>".basename($pluginName)."</a><ul>";
+                    foreach (glob($pluginName . "/*", GLOB_ONLYDIR) as $subfolder) {
+                        echo "<li><a href='/plugins/".basename($pluginName)."/".basename($subfolder)."'>".basename($subfolder)."</a></li>";
+                    }
+                    echo "</ul></li>";
+                }
             }
         ?>
     </ul>
@@ -106,7 +116,8 @@ function menus() {
     $("#showmsg").click(function(){$(".arrow_box").eq(0).fadeIn("slow");$(".arrow_box").eq(1).hide();});
     $("#showalarm").click(function(){$(".arrow_box").eq(1).fadeIn("slow");$(".arrow_box").eq(0).hide();});
     $(document).mouseup(function(e){ if ($(".arrow_box").is(":visible")){$(".arrow_box").eq(1).hide();$(".arrow_box").eq(0).hide();}});
-    $('.hmenu > li > a[href$="dummy-limeweb.html"]').addClass('active');
+    var sname = "<?php echo $_SERVER['SCRIPT_NAME']; ?>";
+    $('.mainmenu > li > a[href$="' + sname + '"]').addClass('selected');
 }
 </script>
 
