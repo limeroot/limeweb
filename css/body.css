@@ -4,9 +4,27 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
+body{
+    background-image: url('/images/background.png');
+}
+
 p{
 	font-weight: lighter;
     font-size: 13px;
+}
+
+h3 {
+    font-size:80%;
+    color:#fff;
+    font-weight:lighter;
+    /*letter-spacing:-.05em;*/
+    padding: 3px 2px;
+    text-indent: 10px;
+    background-color: #A2BE5A;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom-width: 2px;
+    text-shadow: 0 0 24px #fff, 0 0 3px #fff;
+    box-shadow: 0px 5px 8px #888;
 }
 
 #back_ribbon{
@@ -85,7 +103,7 @@ a.selected{
 #sidebar {
     float:left;
     /*width:480px;*/
-    width: 10%;
+    width: 13%;
     padding:10px;
 }
 
