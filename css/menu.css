@@ -29,7 +29,7 @@
 }
 
 .menu ul li a {
-    margin:5px 5px 0px 15px;
+    margin:5px 5px 0px 6px;
     width:82%;
     height:10px;
     padding:3px 0 7px 3px;
@@ -38,7 +38,7 @@
 
 .menu ul li a:hover {
     text-align:left;
-    text-indent:20px;
+    text-indent:6px;
     color: #FFFFFF;
     background:#2b323d;
     border-left:10px solid #FFA500;
