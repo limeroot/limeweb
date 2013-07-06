@@ -19,8 +19,19 @@
         <div id="content">
             <?php include ("menu.php"); ?>
             <div id="page">
-                <h3>Plugin Manager (Alpha)</h3><br/>
-                <p></p>
+                <h2 id="title">Plugin Manager (Alpha)</h2><br/>
+                <!-- <p id="area">Here, you can get new plugins for your limeroot system.<br/> -->
+                <table class="tabs" border="0" cellspacing="0" cellpadding="0" width="100%">
+                    <tr><td>
+                        <ul class="hmenu">
+                            <?= HTML::tabs('/plugins.php', 'Installed'); ?>
+                            <?= HTML::tabs('#', 'Get'); ?>
+                            <?= HTML::tabs('#', 'Search'); ?>
+                            <?= HTML::tabs('#', 'Configuration'); ?>
+                        </ul>
+                    </td></tr><tr><td id="area"><br/><p>here connect to db and get lr installed plugins</p>
+                    </td></tr>
+                </table>
             </div>
         </div>
     </body>

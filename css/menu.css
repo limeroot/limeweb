@@ -4,8 +4,8 @@
     margin: 5px auto 5px auto;
     padding:1px 3px 3px 3px;
     font-size: 11px;
-    text-align: left;
-    background: rgba(255, 255, 255, 0.5);
+    text-align: right;
+    /*background: rgba(255, 255, 255, 0.5);*/
 }
 
 .menu li a {
@@ -23,9 +23,17 @@
     color:#000000;
 }
 
+.menu li a.actived {
+    color: #fff;
+    background-color: #A2BE5A;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
 .menu li a.active {
     color: #6bbb00;
-    background: black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .menu ul li a {
@@ -34,6 +42,7 @@
     height:10px;
     padding:3px 0 7px 3px;
     color: #000000;
+    text-align: left;
 }
 
 .menu ul li a:hover {
@@ -43,6 +52,42 @@
     background:#2b323d;
     border-left:10px solid #FFA500;
 }
+
+#menu{
+    background-color: #0b0b0b;
+    height: 40px;
+    /*display: block;*/
+    /*margin-bottom: 20px;*/
+    /*min-width: 980px;*/
+}
+
+#menu ul{
+    display: inline-block;
+    list-style-type:none;
+}
+
+#menu ul li{
+    display: inline ;
+    float: left;
+}
+
+#menu ul li a{
+    line-height: 40px;
+    display: block;
+    /*width: 60px;*/
+    margin-right: 20px;
+    text-decoration: none;
+    color: #bfbfbf;
+    font-weight: lighter;
+    letter-spacing: -1px;
+    padding: 0px 5px;
+}
+
+#menu ul li a:hover{
+    color: #6bbb00;
+}
+
+
 
 .hmenu {
     position: static;
@@ -55,31 +100,36 @@
     width: auto;
     text-align:center;
     padding:2px 10px;
-    color:rgb(65,0,93);
+    color:#000;
     text-decoration:none;
+    padding: 4px 10px 5px 10px;
 }
 
 .hmenu li a:hover{
     color:#fff;
-    background:rgb(65,0,93);
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-.hmenu li a:active{
-    color:#fff;
-    text-decoration:none;
-    background:#2b323d;
-    
+    background:#BBB;
+/*    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;*/
 }
 
 .hmenu li a.active{
     color:#fff;
+    text-decoration:none;
+    background:#CCC;
+    box-shadow: 0px 2px 4px #888;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+/*.hmenu li a.active{
+    color:#fff;
     background:#2b323d;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-}
+}*/
 
 .tabs > tbody > tr:first-child > td {
-    border-bottom: 3px solid #2b323d;
+    border-top: 3px solid #CCC;
+    background-color: #D8DAD4;
+    box-shadow: 0px 5px 8px #888;
 }
