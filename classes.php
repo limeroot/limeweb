@@ -106,7 +106,7 @@
 					echo "content unavailable for this version";
 				break;
 				}
-			$this->output = shell_exec("limebox lan $command");
+			$this->output = shell_exec("$command");
 		}
 
 		function devices(){
